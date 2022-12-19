@@ -1,14 +1,16 @@
 <script >
 import { store } from './store.js';
 
-import SearchBar from './components/SearchBar.vue';
+
+import MovieCall from './components/MovieCall.vue';
+
 
 
 export default{
   name:"App",
   components:{
-    SearchBar,
-  },
+    MovieCall
+},
   data(){
     return {
       store,
@@ -21,8 +23,9 @@ export default{
 </script>
 
 <template>
-  <SearchBar />
   
+  <MovieCall />
+
 </template>
 
 <style>
