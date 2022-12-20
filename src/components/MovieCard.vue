@@ -11,7 +11,12 @@ export default{
             store,
         }
     },
-    
+    computed: {
+        votoArrotondato(){
+            const voto = Math.ceil(this.info.vote_average / 2);
+            return voto;
+        }
+    }
 }
 </script>
 
@@ -47,7 +52,16 @@ export default{
                 <img class="flag" src="../assets/images/world-flag.gif" alt="">
             </div>
 
-            <div>Voto: {{ info.vote_average }}</div>
+            <div class="star">
+                <div>Voto:</div>
+                <div v-for="star in votoArrotondato">
+                    <font-awesome-icon icon="fa-solid fa-star" />
+                </div>
+                <div v-for="star in 5 - votoArrotondato">
+                    <font-awesome-icon icon="fa-regular fa-star" />
+                </div>
+            </div>
+            
         </div>
         
     </section>
@@ -56,5 +70,13 @@ export default{
 <style>
 .flag {
    width: 30px;
+}
+.star {
+    display: flex;
+    
+}
+.fa-star {
+    color: yellow;
+    display: flex;
 }
 </style>
