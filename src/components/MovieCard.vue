@@ -23,8 +23,8 @@ export default{
         <div class="card">
             
             <img :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`">
-            <h2>Titolo: {{ info.title }}</h2>
-            <h3>Titolo Originale: {{ info.original_title }}</h3>
+            <h2>Titolo: {{ info.title || info.name }}</h2>
+            <h3>Titolo Originale: {{ info.original_title || info.original_name}}</h3>
 
             <div v-if="info.original_language === 'it' ">
                 Lingua: 

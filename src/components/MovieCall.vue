@@ -20,8 +20,9 @@ export default{
             let movieURL = store.apiURL;
 
             if (store.searchText != ""){
-                movieURL = `https://api.themoviedb.org/3/search/movie?${store.apiKey}&query=${store.searchText}`
-            }
+                movieURL = `https://api.themoviedb.org/3/search/multi?${store.apiKey}&query=${store.searchText}` 
+                
+            } 
             axios
             
             .get(movieURL)
@@ -29,7 +30,8 @@ export default{
                 store.movieList = res.data.results;
                 console.log(store.movieList);
             });
-        }
+        },
+        
     }
 }
 </script>
