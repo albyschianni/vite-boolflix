@@ -37,10 +37,13 @@ button {
     background-color: white;
     color: black;
 }
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
+    
 }
 h1 {
     color: #d11d19;
@@ -58,7 +61,7 @@ h1 {
     padding: 10px;
     margin-right: 20px;
 }
-.input {
+input {
     margin-right: 10px;
     width: 150px;
     border: 1px solid white;

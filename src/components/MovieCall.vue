@@ -39,14 +39,18 @@ export default{
 
     <AppHeader @ricerca="callMovie"/>
 
-    <section>
+    <section class="card-container">
         <MovieCard v-for="(film, index) in store.movieList" :key="index" :info="film"/>
     </section>
+
 </template>
 
 <style lang="scss" scoped>
-section {
+.card-container {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
+    width: calc(100% - 20px);
+    justify-content: space-between;
 }
 </style>
