@@ -21,10 +21,7 @@ export default{
 </script>
 
 <template>
-
-    
     <section>
-    
         <div class="card">
             
             <img :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`">
@@ -67,7 +64,8 @@ export default{
     </section>
 </template>
 
-<style>
+<style lang="scss" scoped>
+@use '../style/general.scss';
 .flag {
    width: 30px;
 }

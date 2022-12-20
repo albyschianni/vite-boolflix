@@ -1,13 +1,13 @@
 <script >
 import { store } from '../store.js';
 import axios from "axios";
-import SearchBar from './SearchBar.vue';
+import AppHeader from './AppHeader.vue';
 import MovieCard from './MovieCard.vue';
 
 export default{
     name:"MovieCall",
     components: {
-        SearchBar,
+        AppHeader,
         MovieCard,
     },
     data (){
@@ -21,7 +21,6 @@ export default{
 
             if (store.searchText != ""){
                 movieURL = `https://api.themoviedb.org/3/search/multi?${store.apiKey}&query=${store.searchText}` 
-                
             } 
             axios
             
@@ -38,16 +37,14 @@ export default{
 
 <template>
 
-    <SearchBar @ricerca="callMovie"/>
+    <AppHeader @ricerca="callMovie"/>
 
     <section>
-        
         <MovieCard v-for="(film, index) in store.movieList" :key="index" :info="film"/>
-
     </section>
 </template>
 
-<style>
+<style lang="scss" scoped>
 section {
     display: flex;
     flex-wrap: wrap;

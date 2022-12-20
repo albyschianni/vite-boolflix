@@ -1,14 +1,12 @@
 <script >
 import { store } from './store.js';
-
-
 import MovieCall from './components/MovieCall.vue';
-
 
 
 export default{
   name:"App",
   components:{
+    
     MovieCall
 },
   data(){
@@ -28,6 +26,7 @@ export default{
 
 </template>
 
-<style>
+<style lang="scss">
+@use './style/general.scss';
 
 </style>
